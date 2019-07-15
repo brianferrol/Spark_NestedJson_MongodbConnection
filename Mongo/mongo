@@ -1,0 +1,15 @@
+> use test;
+
+> db.users.find().pretty();
+
+> db.users.createIndex({"_id":-1})
+
+> db.users.createIndex({"details.Nombre_Estacion":1})
+
+> db.users.createIndex({"details.info.MAGNITUD_NOMBRE":1})
+
+> db.users.getIndexes()
+
+> db.users.find({"_id":20190407}).pretty();
+
+> db.users.find({"_id":20190407},{details: {$elemMatch : {"Nombre_Estacion": "Méndez Álvaro"}}}).pretty();
